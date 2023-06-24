@@ -49,14 +49,14 @@ export const CreateSearch = async (req, res) => {
         if(checkdata){
             checkdata.token=data;
             await checkdata.save();
-            return res.send("token updated.")
+            return res.send("Token has been updated successfully.")
         }
 
         const token = new UserToken({
             token: data
         });
         await token.save();
-        return res.send("token saved");
+        return res.send("Token has been created successfully.");
     } catch (error) {
         return res.send(error);
     }
