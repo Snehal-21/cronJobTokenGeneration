@@ -51,7 +51,7 @@ export const CreateSearch = async (req, res) => {
             await checkdata.save();
             return res.send("Token has been updated successfully.")
         }
-
+                
         const token = new UserToken({
             token: data
         });
