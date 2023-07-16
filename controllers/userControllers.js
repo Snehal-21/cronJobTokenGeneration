@@ -45,6 +45,7 @@ export const CreateSearch = async (req, res) => {
         const response = await axios.request(options);
         const data = response.data.sessionToken;
 
+        // update sessiontoken in the same entry 
         const checkdata=await UserToken.findOne({}).exec();
         if(checkdata){
             checkdata.token=data;
